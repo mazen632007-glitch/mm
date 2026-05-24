@@ -709,11 +709,14 @@ let currentQuestion = 0;
 let score = 0;
 let answers = [];
 let quizStarted = false;
+let quizQuestions_copy = []; // To store shuffled questions with original indices
 
 // Initialize quiz
 function initQuiz() {
+    // Create a copy with original indices to track wrong answers
+    quizQuestions_copy = quizQuestions.map((q, index) => ({...q, originalIndex: index}));
     // Shuffle questions for variety
-    quizQuestions.sort(() => Math.random() - 0.5);
+    quizQuestions_copy.sort(() => Math.random() - 0.5);
     displayQuestion();
 }
 
@@ -727,12 +730,12 @@ function startQuiz() {
 
 // Display current question
 function displayQuestion() {
-    const question = quizQuestions[currentQuestion];
+    const question = quizQuestions_copy[currentQuestion];
     
     // Update progress
-    const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+    const progress = ((currentQuestion + 1) / quizQuestions_copy.length) * 100;
     document.getElementById('progressFill').style.width = progress + '%';
-    document.getElementById('questionNumber').textContent = `السؤال ${currentQuestion + 1} من ${quizQuestions.length}`;
+    document.getElementById('questionNumber').textContent = `السؤال ${currentQuestion + 1} من ${quizQuestions_copy.length}`;
     document.getElementById('scoreDisplay').textContent = `النقاط: ${score}`;
     
     // Display question
@@ -757,6 +760,7 @@ function displayQuestion() {
             document.querySelectorAll('.option').forEach(el => el.classList.remove('selected'));
             optionDiv.classList.add('selected');
             answers[currentQuestion] = index;
+            document.getElementById('nextBtn').disabled = false;
         });
         
         optionsContainer.appendChild(optionDiv);
@@ -770,7 +774,7 @@ function displayQuestion() {
 // Next question
 function nextQuestion() {
     if (answers[currentQuestion] !== undefined) {
-        if (currentQuestion < quizQuestions.length - 1) {
+        if (currentQuestion < quizQuestions_copy.length - 1) {
             currentQuestion++;
             displayQuestion();
         } else {
@@ -791,7 +795,7 @@ function previousQuestion() {
 function calculateResults() {
     score = 0;
     
-    quizQuestions.forEach((question, index) => {
+    quizQuestions_copy.forEach((question, index) => {
         const userAnswerIndex = answers[index];
         const isCorrect = userAnswerIndex === (question.correctAnswer ? 0 : 1);
         
@@ -800,7 +804,7 @@ function calculateResults() {
         }
     });
     
-    const percentage = Math.round((score / quizQuestions.length) * 100);
+    const percentage = Math.round((score / quizQuestions_copy.length) * 100);
     
     // Display results
     document.getElementById('quizScreen').classList.remove('active');
@@ -828,11 +832,12 @@ function calculateResults() {
     
     // Detailed results
     const detailedResults = document.getElementById('detailedResults');
+    const wrongCount = quizQuestions_copy.length - score;
     detailedResults.innerHTML = `
         <h3>ملخص النتائج</h3>
         <div class="result-item">
             <strong>الأسئلة الصحيحة:</strong>
-            <span>${score} من ${quizQuestions.length}</span>
+            <span>${score} من ${quizQuestions_copy.length}</span>
         </div>
         <div class="result-item">
             <strong>النسبة المئوية:</strong>
@@ -840,9 +845,67 @@ function calculateResults() {
         </div>
         <div class="result-item">
             <strong>الأسئلة الخاطئة:</strong>
-            <span>${quizQuestions.length - score}</span>
+            <span>${wrongCount}</span>
         </div>
     `;
+    
+    // Show/hide wrong answers button
+    const wrongAnswersBtn = document.getElementById('wrongAnswersBtn');
+    if (wrongCount === 0) {
+        wrongAnswersBtn.style.display = 'none';
+    } else {
+        wrongAnswersBtn.style.display = 'block';
+    }
+}
+
+// Show wrong answers with explanations
+function showWrongAnswers() {
+    document.getElementById('resultsScreen').classList.remove('active');
+    document.getElementById('wrongAnswersScreen').classList.add('active');
+    
+    const wrongAnswersContent = document.getElementById('wrongAnswersContent');
+    let wrongAnswersHTML = '';
+    let wrongCount = 0;
+    
+    quizQuestions_copy.forEach((question, index) => {
+        const userAnswerIndex = answers[index];
+        const isCorrect = userAnswerIndex === (question.correctAnswer ? 0 : 1);
+        
+        if (!isCorrect) {
+            wrongCount++;
+            const userAnswer = userAnswerIndex === 0 ? 'صحيح (True)' : 'خطأ (False)';
+            const correctAnswer = question.correctAnswer ? 'صحيح (True)' : 'خطأ (False)';
+            
+            wrongAnswersHTML += `
+                <div class="wrong-answer-item">
+                    <h3>❌ السؤال ${wrongCount}</h3>
+                    <div class="question-text">${question.question}</div>
+                    <div class="answer-info">
+                        <p><span class="your-answer">إجابتك: ${userAnswer}</span></p>
+                        <p><span class="correct-answer">الإجابة الصحيحة: ${correctAnswer}</span></p>
+                    </div>
+                    <div class="explanation-box">
+                        <strong>💡 الشرح:</strong>
+                        <p>${question.explanation}</p>
+                    </div>
+                </div>
+            `;
+        }
+    });
+    
+    wrongAnswersHTML = `
+        <div class="wrong-answer-counter">
+            عدد الأسئلة الخاطئة: ${wrongCount}
+        </div>
+    ` + wrongAnswersHTML;
+    
+    wrongAnswersContent.innerHTML = wrongAnswersHTML;
+}
+
+// Back to results
+function backToResults() {
+    document.getElementById('wrongAnswersScreen').classList.remove('active');
+    document.getElementById('resultsScreen').classList.add('active');
 }
 
 // Restart quiz
@@ -851,8 +914,10 @@ function restartQuiz() {
     score = 0;
     answers = [];
     quizStarted = false;
+    quizQuestions_copy = [];
     
     document.getElementById('resultsScreen').classList.remove('active');
+    document.getElementById('wrongAnswersScreen').classList.remove('active');
     document.getElementById('startScreen').classList.add('active');
 }
 
