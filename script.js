@@ -1,6 +1,6 @@
-// Quiz questions data
+// Quiz questions data - All Psychology Questions
 const quizQuestions = [
-    // True/False questions
+    // SECTION 1: True/False Questions (Questions 1-50)
     {
         id: 1,
         question: "The discipline of positive psychology focuses on the individual and social well-being.",
@@ -321,7 +321,7 @@ const quizQuestions = [
         question: "Positive psychology began as a new domain of psychology in 1999.",
         type: "true/false",
         correctAnswer: false,
-        explanation: "✗ Positive psychology began in 1998 (some sources say 1999), so this is approximately correct but the exact year is 1998."
+        explanation: "✗ Positive psychology began in 1998."
     },
     {
         id: 47,
@@ -350,6 +350,357 @@ const quizQuestions = [
         type: "true/false",
         correctAnswer: true,
         explanation: "✓ These are the three components of happiness."
+    },
+    // SECTION 2: More True/False Questions (Questions 51-100)
+    {
+        id: 51,
+        question: "Psychology is defined as the scientific study of behavior and mental processes.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ This is the correct definition of psychology."
+    },
+    {
+        id: 52,
+        question: "Psychology is defined as the scientific study of behavior only.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology includes both behavior AND mental processes."
+    },
+    {
+        id: 53,
+        question: "Psychology is defined as the scientific study of mental processes only.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology includes both behavior AND mental processes."
+    },
+    {
+        id: 54,
+        question: "Psychology is interested in studying how behavior and mental processes are affected by an organism's physical, mental state and environment.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ All three factors influence psychology."
+    },
+    {
+        id: 55,
+        question: "The goal of studying psychology is to describe how people and other species behave.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Description is one of the major goals of psychology."
+    },
+    {
+        id: 56,
+        question: "Psychology is not interested in the causes of behaviors.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Understanding causes IS a major goal of psychology."
+    },
+    {
+        id: 57,
+        question: "Psychology doesn't try to predict how people and animals would behave under certain conditions.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Prediction IS one of the major goals of psychology."
+    },
+    {
+        id: 58,
+        question: "In psychology we try to control behaviors and its causes.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Control is one of the goals of psychology."
+    },
+    {
+        id: 59,
+        question: "Applying psychological knowledge helps in enhancing human welfare.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Application of psychology improves human welfare."
+    },
+    {
+        id: 60,
+        question: "Psychology is used sometimes to manipulate others.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology can unfortunately be misused for manipulation."
+    },
+    {
+        id: 61,
+        question: "Using psychology will not achieve any political gains.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology CAN be used for political purposes."
+    },
+    {
+        id: 62,
+        question: "The main subject of psychology is General Psychology.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ General Psychology is the foundation of psychology."
+    },
+    {
+        id: 63,
+        question: "General psychology is the foundation of studying the science of psychology.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ General Psychology provides the foundational concepts."
+    },
+    {
+        id: 64,
+        question: "General psychology deals with principles, problems and methods.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ General Psychology covers all these areas."
+    },
+    {
+        id: 65,
+        question: "Psychology is just the study of behaviors.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology includes both behavior AND mental processes."
+    },
+    {
+        id: 66,
+        question: "Psychology emerged from biology only.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology emerged from BOTH biology AND philosophy."
+    },
+    {
+        id: 67,
+        question: "Psychology emerged from biology and philosophy.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology has roots in both sciences."
+    },
+    {
+        id: 68,
+        question: "Psychology is linked with medicine and linguistics.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology connects with many disciplines."
+    },
+    {
+        id: 69,
+        question: "Psychology plays a tremendous role in the world today.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology is very important in modern society."
+    },
+    {
+        id: 70,
+        question: "Psychology has no role in the world today.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology plays a huge role in modern society."
+    },
+    {
+        id: 71,
+        question: "Psychologists are employed in hospitals only.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychologists work in many different settings."
+    },
+    {
+        id: 72,
+        question: "Psychologists are employed in hospitals, mental health clinics and universities.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ These are all common workplaces for psychologists."
+    },
+    {
+        id: 73,
+        question: "Psychologists perform a wide variety of tasks and roles.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychologists have diverse roles."
+    },
+    {
+        id: 74,
+        question: "Psychologists performance is limited to treating mental illness.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychologists do much more than treat mental illness."
+    },
+    {
+        id: 75,
+        question: "Psychologists tasks and roles range from treating mental illness to influencing public health policy.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychologists have a wide range of roles."
+    },
+    {
+        id: 76,
+        question: "One of the role psychologists do is influencing public health policy.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychologists do influence public health policy."
+    },
+    {
+        id: 77,
+        question: "Psychology is in fact just a common sense.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology is based on scientific methods, not common sense."
+    },
+    {
+        id: 78,
+        question: "Psychology relies on the scientific methods.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology is a scientific discipline."
+    },
+    {
+        id: 79,
+        question: "Scientific methods in psychology investigate questions and arrive to conclusions.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Scientific methods are essential to psychology."
+    },
+    {
+        id: 80,
+        question: "Through using empirical methods in psychology, researchers are able to discover relationships between different variables.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Empirical methods reveal variable relationships."
+    },
+    {
+        id: 81,
+        question: "Psychologists use specific techniques to study the human mind and behaviors.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychologists use various techniques."
+    },
+    {
+        id: 82,
+        question: "Psychologists use a range of techniques to study the human mind and behaviors.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Multiple techniques are used in psychology."
+    },
+    {
+        id: 83,
+        question: "Psychologists use naturalistic observations, experiments and case studies to study human mind and behaviors.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ These are all valid research methods."
+    },
+    {
+        id: 84,
+        question: "Psychologists tackle problems from multiple perspectives.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Multiple perspectives enhance understanding."
+    },
+    {
+        id: 85,
+        question: "Psychologists tackle problems from a specific perspective only.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychologists use multiple perspectives."
+    },
+    {
+        id: 86,
+        question: "Topics and questions in psychology can be looked at in a number of different ways.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology allows for multiple viewpoints."
+    },
+    {
+        id: 87,
+        question: "Some major perspectives in psychology include biological and evolutionary perspectives.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ These are important perspectives in psychology."
+    },
+    {
+        id: 88,
+        question: "Psychology is all about therapy.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology includes therapy but is much broader."
+    },
+    {
+        id: 89,
+        question: "Psychology encompasses areas such as teaching and research.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology includes education and research."
+    },
+    {
+        id: 90,
+        question: "Psychology practices are specific to settings just like hospitals.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology is practiced in many diverse settings."
+    },
+    {
+        id: 91,
+        question: "Psychologists work in a wide variety of settings such as Governmental Offices and Private Corporations.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychologists work in diverse settings."
+    },
+    {
+        id: 92,
+        question: "Psychology has no role in the field of sport.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Sports psychology is a major field."
+    },
+    {
+        id: 93,
+        question: "Psychologists help athletes to focus their attention.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Sports psychologists help with focus and performance."
+    },
+    {
+        id: 94,
+        question: "Psychology is all around us.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology is present in everyday life."
+    },
+    {
+        id: 95,
+        question: "Psychology is just an academic subject that exists only in classrooms, research labs and mental health offices.",
+        type: "true/false",
+        correctAnswer: false,
+        explanation: "✗ Psychology is applied in many real-world settings."
+    },
+    {
+        id: 96,
+        question: "Television commercial and print ads rely heavily on psychology.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Advertising uses psychological principles extensively."
+    },
+    {
+        id: 97,
+        question: "The websites we all visit utilize psychology to understand how people read, use and interpret online information.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Web design relies on psychology."
+    },
+    {
+        id: 98,
+        question: "Psychology used in TV commercials and printed ads help in developing marketing messages that persuade people.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Psychology is key to marketing persuasion."
+    },
+    {
+        id: 99,
+        question: "The basic premise of positive psychology is that human beings are often drawn by the future more than they are driven by the past.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ This is a core premise of positive psychology."
+    },
+    {
+        id: 100,
+        question: "Helping others behaviour in children is innate, not learned behaviour.",
+        type: "true/false",
+        correctAnswer: true,
+        explanation: "✓ Children have natural inclinations to help others."
     }
 ];
 
