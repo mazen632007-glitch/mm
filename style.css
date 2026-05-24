@@ -216,6 +216,8 @@ body {
     padding: 50px 40px;
     text-align: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .results-box h1 {
@@ -293,6 +295,105 @@ body {
     font-weight: 600;
 }
 
+/* Wrong Answers Screen */
+.wrong-answers-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.wrong-answers-container h1 {
+    color: var(--dark);
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#wrongAnswersContent {
+    margin-bottom: 30px;
+}
+
+.wrong-answer-item {
+    background: #fef2f2;
+    border-left: 4px solid var(--danger);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wrong-answer-item h3 {
+    color: var(--danger);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wrong-answer-item .question-text {
+    color: var(--dark);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.wrong-answer-item .answer-info {
+    background: white;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.answer-info p {
+    color: #4a5568;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.your-answer {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.correct-answer {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.explanation-box {
+    background: #f0f4ff;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.explanation-box strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.explanation-box p {
+    color: var(--dark);
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.wrong-answer-counter {
+    background: #fff5e6;
+    border-left: 4px solid var(--warning);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: var(--dark);
+    font-weight: 600;
+    text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .welcome-box {
@@ -334,5 +435,21 @@ body {
 
     .score-circle span {
         font-size: 2.5em;
+    }
+
+    .wrong-answers-container {
+        padding: 20px;
+    }
+
+    .wrong-answer-item {
+        padding: 15px;
+    }
+
+    .wrong-answer-item h3 {
+        font-size: 1em;
+    }
+
+    .wrong-answer-item .question-text {
+        font-size: 1em;
     }
 }
