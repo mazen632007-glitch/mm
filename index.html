@@ -24,7 +24,7 @@
                     <div id="progressFill" class="progress-fill"></div>
                 </div>
                 <div class="question-info">
-                    <span id="questionNumber">السؤال 1 من 10</span>
+                    <span id="questionNumber">السؤال 1 من 100</span>
                     <span id="scoreDisplay">النقاط: 0</span>
                 </div>
                 
@@ -51,7 +51,22 @@
                 </div>
                 <div class="result-message" id="resultMessage"></div>
                 <div class="detailed-results" id="detailedResults"></div>
-                <button class="btn btn-primary" onclick="restartQuiz()">أعد الاختبار</button>
+                <div class="button-group" style="margin-top: 30px;">
+                    <button class="btn btn-primary" id="wrongAnswersBtn" onclick="showWrongAnswers()" style="display: none;">📌 عرض الأسئلة الخاطئة</button>
+                    <button class="btn btn-secondary" onclick="restartQuiz()">أعد الاختبار</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- شاشة عرض الأسئلة الخاطئة -->
+        <div id="wrongAnswersScreen" class="screen">
+            <div class="wrong-answers-container">
+                <h1>📌 الأسئلة الخاطئة</h1>
+                <div id="wrongAnswersContent"></div>
+                <div class="button-group" style="margin-top: 30px; justify-content: center; gap: 15px;">
+                    <button class="btn btn-secondary" onclick="backToResults()">الرجوع للنتائج</button>
+                    <button class="btn btn-primary" onclick="restartQuiz()">أعد الاختبار</button>
+                </div>
             </div>
         </div>
     </div>
